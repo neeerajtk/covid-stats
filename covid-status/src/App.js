@@ -14,24 +14,16 @@ import World from './Components/World';
 
 function App() {
   return (
+    <div className="container-fluid">
     <BrowserRouter>
-        <Header/>
-
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/country">Country</Link> </li>
-          <li><Link to="/world">World</Link></li>
-        </ul>
-      </div>
+      <Header/>
       <Switch>
         <Route exact path="/"><Country/></Route>
         <Route path="/country"><Country/></Route>
         <Route path="/world"><World/></Route>
       </Switch>
     </BrowserRouter>
-
-    
+    </div>    
   );
 }
 
