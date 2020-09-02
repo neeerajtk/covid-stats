@@ -10,8 +10,8 @@ function Header() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                    <Link to='/country'>Local Stats |</Link>
-                    <Link to='/world'>| Global Stats</Link>
+                    <Link className="nav-link" to='/country'>Local Stats </Link>
+                    <Link className="nav-link" to='/world'> Global Stats</Link>
                 
                     </Nav>
                   
