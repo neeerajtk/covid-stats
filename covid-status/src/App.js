@@ -15,6 +15,8 @@ import World from './Components/World';
 function App() {
   return (
     <BrowserRouter>
+        <Header/>
+
       <div>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -23,7 +25,7 @@ function App() {
         </ul>
       </div>
       <Switch>
-        <Route exact path="/"><Header/></Route>
+        <Route exact path="/"><Country/></Route>
         <Route path="/country"><Country/></Route>
         <Route path="/world"><World/></Route>
       </Switch>
