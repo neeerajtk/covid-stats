@@ -41,7 +41,28 @@ class State extends Component {
                                 </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
-                                <Card.Body>Hello! I'm the body</Card.Body>
+                                <Card.Body>
+                                    <table className="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <td>District Name</td>
+                                                <td>Total Reported Cases</td>
+                                                <td>Total Active Cases</td>
+                                                <td>Total Recovered Cases</td>
+                                                <td>Total Deaths</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </Card.Body>
                                 </Accordion.Collapse>
                             </Card>
                             )
