@@ -19,10 +19,22 @@ class State extends Component {
     }
 
     render() {
+
+        let keys = Object.keys(this.state.stateData);
+        console.log(keys);
+        
         return (
             <div className="row">
                 <div className="col-md-12">
                 <Accordion>
+
+                    {
+                        keys.map((item,key)=>{
+                            let districts = this.state.stateData[item].districtData;
+                            let district_keys = Object.keys(districts);
+                        }) 
+                    }
+
                     <Card>
                         <Card.Header>
                         <Accordion.Toggle as={Button} variant="link" eventKey="0">
@@ -33,16 +45,7 @@ class State extends Component {
                         <Card.Body>Hello! I'm the body</Card.Body>
                         </Accordion.Collapse>
                     </Card>
-                    <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                            Click me!
-                        </Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="1">
-                        <Card.Body>Hello! I'm another body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
+
                 </Accordion>
                 </div>
                 
