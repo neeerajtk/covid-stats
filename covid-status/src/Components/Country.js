@@ -11,17 +11,48 @@ export default function Country() {
             <div className="col-md-12">
                 <div className="row">
                     <div className="col-md-3">
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                    <Card className="badge badge-warning" style={{ width: '18rem' }}>
+                        <Card.Body className="text-center">
+                            <Card.Title>Total Reported Cases</Card.Title>
+                            <h3>2000</h3>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                                    [Today : 234]
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
-                        </Card>
+                    </Card>
+                    </div>
+                    <div className="col-md-3">
+                    <Card className="badge badge-secondary" style={{ width: '18rem' }}>
+                        <Card.Body className="text-center">
+                            <Card.Title>Total Active Cases</Card.Title>
+                            <h3>2000</h3>
+                            <Card.Text>
+                                    [Today : 234]
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    </div>
+                    <div className="col-md-3">
+                    <Card className="badge badge-success" style={{ width: '18rem' }}>
+                        <Card.Body className="text-center">
+                            <Card.Title>Total Recovered Cases</Card.Title>
+                            <h3>2000</h3>
+                            <Card.Text>
+                                    [Today : 234]
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    </div>
+                    <div className="col-md-3">
+                    <Card className="badge badge-danger" style={{ width: '18rem' }}>
+                        <Card.Body className="text-center">
+                            <Card.Title>Total Deaths</Card.Title>
+                            <h3>2000</h3>
+                            <Card.Text>
+                                    [Today : 234]
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
                     </div>
                 </div>
             </div>
