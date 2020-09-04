@@ -1,4 +1,4 @@
-# covid-status
+# covid-stats
 
 
 # Newspaper.io
