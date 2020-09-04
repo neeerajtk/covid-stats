@@ -61,8 +61,7 @@ class State extends Component {
                                 </Card.Header>
                                 <Accordion.Collapse eventKey={key}>
                                 <Card.Body>
-                                    {/* <table className="table table-striped table-bordered">   */}
-                                    <Table striped bordered hover variant="dark">
+                                    <table className="table table-striped table-bordered">  
                                         <thead>
                                             <tr>
                                                 <td>District Name</td>
@@ -87,8 +86,7 @@ class State extends Component {
                                                 })
                                             }
                                         </tbody>
-                                    {/* </table> */}
-                                    </Table>
+                                    </table>
                                 </Card.Body>
                                 </Accordion.Collapse>
                             </Card>

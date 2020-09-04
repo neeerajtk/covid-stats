@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <Header/>
       <Switch>
-        <Route exact path="/"><Country/></Route>
+        <Route exact path="/"><World/></Route>
         <Route path="/country"><Country/></Route>
         <Route path="/world"><World/></Route>
       </Switch>

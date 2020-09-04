@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Card, Accordion, Button} from 'react-bootstrap';
+import {Card, Accordion, Button,Table} from 'react-bootstrap';
 
 
 
@@ -27,7 +27,7 @@ class World extends Component {
         return (
             <div className="row">
                 <div className="col-md-12">
-                    <table className="table table-striped table-bordered">
+                <Table striped bordered hover variant="dark">
                         <thead>
                             <tr>
                                 <td>Country</td>
@@ -50,7 +50,7 @@ class World extends Component {
                                 })
                             }
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             </div>
         )
