@@ -6,7 +6,8 @@ import {Card, Button} from 'react-bootstrap';
 
 
 
-export default function Country() {
+class Country extends React.Component {
+    render(){
     return (
         <div className="row"> 
             <div className="col-md-12">
@@ -67,3 +68,6 @@ export default function Country() {
         </div>
     )
 }
+}
+
+export default Country;

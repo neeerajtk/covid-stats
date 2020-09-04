@@ -40,7 +40,7 @@ class World extends Component {
                             {
                                 this.state.globalData.map((item, key)=>{
                                     return (
-                                        <tr>
+                                        <tr key={key}>
                                             <td>{item.country}</td>
                                             <td>{item.cases}</td>
                                             <td>{item.recovered}</td>
