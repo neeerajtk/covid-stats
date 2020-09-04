@@ -73,9 +73,9 @@ class State extends Component {
                                         </thead>
                                         <tbody>
                                             {
-                                                district_list.map((item,key)=> {
+                                                district_list.filter(item => item!='State Unassigned').map((item,key)=> {
                                                     return(
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <td>{item.district_name}</td>
                                                             <td>{item.confirmed}</td>
                                                             <td>{item.active}</td>
