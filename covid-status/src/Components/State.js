@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Card, Accordion, Button} from 'react-bootstrap';
 
 class State extends Component {
 
@@ -19,7 +20,31 @@ class State extends Component {
 
     render() {
         return (
-            <div>
+            <div className="row">
+                <div className="col-md-12">
+                <Accordion>
+                    <Card>
+                        <Card.Header>
+                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                            Click me!
+                        </Accordion.Toggle>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="0">
+                        <Card.Body>Hello! I'm the body</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                        <Card.Header>
+                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                            Click me!
+                        </Accordion.Toggle>
+                        </Card.Header>
+                        <Accordion.Collapse eventKey="1">
+                        <Card.Body>Hello! I'm another body</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
+                </div>
                 
             </div>
         )
