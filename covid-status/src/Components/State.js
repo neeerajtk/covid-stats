@@ -14,7 +14,7 @@ class State extends Component {
         axios.get('https://api.covid19india.org/state_district_wise.json')
         .then(response =>{
             console.log(response.data);
-            this.setState(response.data)
+            this.setState({stateData: response.data})
         })
     }
 
@@ -32,19 +32,23 @@ class State extends Component {
                         keys.map((item,key)=>{
                             let districts = this.state.stateData[item].districtData;
                             let district_keys = Object.keys(districts);
+
+                            return(
+                                <Card>
+                                <Card.Header>
+                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                                    Click me!
+                                </Accordion.Toggle>
+                                </Card.Header>
+                                <Accordion.Collapse eventKey="0">
+                                <Card.Body>Hello! I'm the body</Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                            )
                         }) 
                     }
 
-                    <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                            Click me!
-                        </Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="0">
-                        <Card.Body>Hello! I'm the body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
+                    
 
                 </Accordion>
                 </div>
