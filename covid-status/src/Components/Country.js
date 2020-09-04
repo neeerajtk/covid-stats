@@ -10,7 +10,7 @@ export default function Country() {
     return (
         <div className="row"> 
             <div className="col-md-12">
-                <h3>India</h3>
+                <h3>Your Location : India</h3>
             </div>
             <div className="col-md-12">
                 <div className="row">

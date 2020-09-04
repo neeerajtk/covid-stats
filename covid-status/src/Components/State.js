@@ -33,14 +33,33 @@ class State extends Component {
                             let districts = this.state.stateData[item].districtData;
                             let district_keys = Object.keys(districts);
 
+                            let total_active = 0;
+                            let total_confirmed = 0;
+                            let total_deaths = 0;
+                            let total_recover = 0;
+
+
+                            let district_list = [];
+                            for(let x in districts){
+                                total_active += districts[x].active;
+                                total_confirmed += districts[x].confirmed;
+                                total_deaths += districts[x].deceased;
+                                total_recover += districts[x].recovered;
+                                let ob = districts[x];
+                                ob["district_name"] = x;
+                                district_list.push(ob);
+                             }
+                             console.log(district_list);
+                             
+
                             return(
                                 <Card>
                                 <Card.Header>
-                                <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                    {item}
+                                <Accordion.Toggle as={Button} variant="link" eventKey={key}>
+                                  <span className="btn-dark p-1 mr-2">{item}</span>   - Total cases - {total_confirmed} Active - {total_active} Recovered - {total_recover} Death - {total_deaths}
                                 </Accordion.Toggle>
                                 </Card.Header>
-                                <Accordion.Collapse eventKey="0">
+                                <Accordion.Collapse eventKey={key}>
                                 <Card.Body>
                                     <table className="table table-striped table-bordered">
                                         <thead>
@@ -53,13 +72,19 @@ class State extends Component {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
+                                            {
+                                                district_list.map((item,key)=> {
+                                                    return(
+                                                        <tr>
+                                                            <td>{item.district_name}</td>
+                                                            <td>{item.confirmed}</td>
+                                                            <td>{item.active}</td>
+                                                            <td>{item.recovered}</td>
+                                                            <td>{item.deceased}</td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                         </tbody>
                                     </table>
                                 </Card.Body>
