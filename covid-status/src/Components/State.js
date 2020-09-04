@@ -29,7 +29,7 @@ class State extends Component {
                 <Accordion>
 
                     {
-                        keys.map((item,key)=>{
+                        keys.filter(item => item!='State Unassigned').map((item,key)=>{
                             let districts = this.state.stateData[item].districtData;
                             let district_keys = Object.keys(districts);
 
@@ -37,7 +37,7 @@ class State extends Component {
                                 <Card>
                                 <Card.Header>
                                 <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                                    Click me!
+                                    {item}
                                 </Accordion.Toggle>
                                 </Card.Header>
                                 <Accordion.Collapse eventKey="0">
