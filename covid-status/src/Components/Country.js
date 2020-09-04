@@ -60,6 +60,9 @@ export default function Country() {
                     </div>
                 </div>
             </div>
+            <div className="col-md-12">
+                <State/>
+            </div>
         
         </div>
     )
