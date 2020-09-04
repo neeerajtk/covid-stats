@@ -4,9 +4,18 @@ import State from './State';
 
 import {Card, Button} from 'react-bootstrap';
 
+import axios from 'axios';
 
 
 class Country extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            data: {}
+        }
+    }
+
+
     render(){
     return (
         <div className="row"> 
