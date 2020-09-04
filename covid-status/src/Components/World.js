@@ -27,7 +27,7 @@ class World extends Component {
         return (
             <div className="row">
                 <div className="col-md-12">
-                    <table>
+                    <table className="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <td>Country</td>
