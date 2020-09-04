@@ -11,10 +11,16 @@ class Country extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            data: {}
+            countryData: {}
         }
     }
-
+    componentDidMount(){
+        axios.get('https://corona.lmao.ninja/v2/countries/india').then(response=>{
+            this.setState({
+                countryData: response.data
+            })
+        })
+    }
 
     render(){
     return (
@@ -28,9 +34,9 @@ class Country extends React.Component {
                     <Card className="badge badge-warning" style={{ width: '18rem' }}>
                         <Card.Body className="text-center">
                             <Card.Title>Total Reported Cases</Card.Title>
-                            <h3>2000</h3>
+                            <h3>{this.state.countryData.cases}</h3>
                             <Card.Text>
-                                    [Today : 234]
+                                    [Today : {this.state.countryData.todayCases}]
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -39,9 +45,9 @@ class Country extends React.Component {
                     <Card className="badge badge-secondary" style={{ width: '18rem' }}>
                         <Card.Body className="text-center">
                             <Card.Title>Total Active Cases</Card.Title>
-                            <h3>2000</h3>
+                                <h3>{this.state.countryData.active}</h3>
                             <Card.Text>
-                                    [Today : 234]
+                                    [Today : {this.state.countryData.critical}]
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -50,9 +56,9 @@ class Country extends React.Component {
                     <Card className="badge badge-success" style={{ width: '18rem' }}>
                         <Card.Body className="text-center">
                             <Card.Title>Total Recovered Cases</Card.Title>
-                            <h3>2000</h3>
+                                 <h3>{this.state.countryData.recovered}</h3>
                             <Card.Text>
-                                    [Today : 234]
+                                   [Today : {this.state.countryData.todayRecovered} ]
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -61,9 +67,9 @@ class Country extends React.Component {
                     <Card className="badge badge-danger" style={{ width: '18rem' }}>
                         <Card.Body className="text-center">
                             <Card.Title>Total Deaths</Card.Title>
-                            <h3>2000</h3>
+                                 <h3>{this.state.countryData.deaths}</h3>
                             <Card.Text>
-                                    [Today : 234]
+                                    [Today : {this.state.countryData.todayDeaths}]
                             </Card.Text>
                         </Card.Body>
                     </Card>
