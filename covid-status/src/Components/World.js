@@ -8,9 +8,7 @@ class World extends Component {
     constructor(props){
         super(props);
         this.state= {
-            globalData:{},
-            data: []
-        }
+            globalData:[]        }
 
     }
 
@@ -27,7 +25,34 @@ class World extends Component {
 
     render() {
         return (
-            
+            <div className="row">
+                <div className="col-md-12">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Country</td>
+                                <td>Total Cases</td>
+                                <td>Recovered</td>
+                                <td>Death</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                this.state.globalData.map((item, key)=>{
+                                    return (
+                                        <tr>
+                                            <td>{item.country}</td>
+                                            <td>{item.cases}</td>
+                                            <td>{item.recovered}</td>
+                                            <td>{item.deaths}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         )
     }
 }
