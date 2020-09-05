@@ -11,22 +11,41 @@ class Country extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            countryName:'',
             countryData: {}
         }
     }
     componentDidMount(){
         axios.get('https://corona.lmao.ninja/v2/countries/india').then(response=>{
             this.setState({
-                countryData: response.data
+                countryData: response.data,
+                
             })
         })
     }
+
+    componentDidMount(){
+        this.getGeoInfo();
+    }
+
+    getGeoInfo = () => {
+        axios.get('https://ipapi.co/json/').then((response) => {
+            let data = response.data;
+            this.setState({
+                countryName: data.country_name,
+            });
+            console.log(this.state.countryName);
+            
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
 
     render(){
     return (
         <div className="row"> 
             <div className="col-md-12">
-                <h3>Your Location : India</h3>
+                <h3>Your Location : {this.state.countryName}</h3>
             </div>
             <div className="col-md-12">
                 <div className="row">
