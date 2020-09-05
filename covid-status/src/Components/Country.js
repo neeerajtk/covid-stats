@@ -15,32 +15,46 @@ class Country extends React.Component {
             countryData: {}
         }
     }
-    componentDidMount(){
-        axios.get('https://corona.lmao.ninja/v2/countries/india').then(response=>{
-            this.setState({
-                countryData: response.data,
-                
-            })
-        })
-    }
 
-    componentDidMount(){
-        this.getGeoInfo();
-    }
+    // componentWillMount(){
+    //     this.getGeoInfo();
+    // }
 
-    getGeoInfo = () => {
+     componentDidMount(){
         axios.get('https://ipapi.co/json/').then((response) => {
-            let data = response.data;
+            let data =  response.data;
             this.setState({
                 countryName: data.country_name,
+            },()=>{
+
+                axios.get(`https://corona.lmao.ninja/v2/countries/${this.state.countryName}`).then(response=>{
+                    this.setState({
+                        countryData: response.data,
+                        
+                    })
+                })
+                
             });
             console.log(this.state.countryName);
             
-        }).catch((error) => {
-            console.log(error);
-        });
+        })
+       
     };
 
+    //  componentDidMount(){
+    //     //  this.getGeoInfo();
+    //     axios.get(`https://corona.lmao.ninja/v2/countries/${this.state.countryName}`).then(response=>{
+    //         this.setState({
+    //             countryData: response.data,
+                
+    //         })
+    //     })
+        
+    // }
+
+    
+
+   
     render(){
     return (
         <div className="row"> 
