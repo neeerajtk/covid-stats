@@ -24,7 +24,8 @@ class World extends Component {
     }
 
     handleSearch= (event)=> {
-        let list = this.state.globalData;
+        this.forceUpdate();
+        var list = this.state.globalData;
         console.log('list os');
         
         console.log(list);
