@@ -17,11 +17,30 @@ class World extends Component {
         .then(response => {
             console.log(response);
             this.setState({
-                globalData: response.data
+                globalData: response.data,
             })
             
         })
     }
+    // handleSearch= (event)=> {
+
+    //     let list = [];
+    //     this.state.globalData.map((item, key)=>{
+    //         return (
+    //           list.push(item.country)
+    //         )
+    //     })
+ 
+    //     let {value}= event.target.value;
+    //     list = list.filter(function(item){
+    //         return item.toLowerCase().search(value.toLowerCase()) !==-1;
+    //     });
+
+    //     this.setState({
+    //         globalData: list
+    //     })
+
+    // }
 
     render() {
         return (
@@ -30,7 +49,9 @@ class World extends Component {
                 <Table striped bordered hover variant="dark">
                         <thead>
                             <tr>
-                                <td>Search by Country :  <input type="text"/></td>
+                                <td>Search by Country :  <input type="text" name="search" onClick={this.handleSearch}/>
+                                {/* <p>{this.state.searchValue}</p> */}
+                                </td>
                                 {/* <td></td> */}
                             </tr>
                             <tr>
