@@ -8,7 +8,8 @@ class World extends Component {
     constructor(props){
         super(props);
         this.state= {
-            globalData:[]        }
+            globalData:[]        
+        }
 
     }
 
@@ -18,19 +19,20 @@ class World extends Component {
             console.log(response);
             this.setState({
                 globalData: response.data,
+                searchValue:''
             })
             
         })
     }
 
-    handleSearch= (event)=> {
-        this.forceUpdate();
+    handleSubmit= ()=>{
+
         var list = this.state.globalData;
         console.log('list os');
         
         console.log(list);
-        
-        let {value}= event.target;
+        let value = this.state.searchValue
+        // let {value}= event.target;
         list = list.filter(function(item){
             return item.country.toString().toLowerCase().search(value.toLowerCase()) !==-1;
         });
@@ -41,6 +43,13 @@ class World extends Component {
 
     }
 
+    handleSearch= (event)=> {
+        // this.forceUpdate();
+        this.setState({
+            searchValue: event.target.value
+        })
+    }
+
     render() {
         return (
             <div className="row">
@@ -49,6 +58,7 @@ class World extends Component {
                         <thead>
                             <tr>
                                 <td>Search by Country :  <input type="text" name="search" onClick={this.handleSearch}/>
+                                <input name="search1" value="Search" type="submit" onClick={this.handleSubmit}/>
                                 {/* <p>{this.state.searchValue}</p> */}
                                 </td>
                                 {/* <td></td> */}
