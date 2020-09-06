@@ -22,25 +22,23 @@ class World extends Component {
             
         })
     }
-    // handleSearch= (event)=> {
 
-    //     let list = [];
-    //     this.state.globalData.map((item, key)=>{
-    //         return (
-    //           list.push(item.country)
-    //         )
-    //     })
- 
-    //     let {value}= event.target.value;
-    //     list = list.filter(function(item){
-    //         return item.toLowerCase().search(value.toLowerCase()) !==-1;
-    //     });
+    handleSearch= (event)=> {
+        let list = this.state.globalData;
+        console.log('list os');
+        
+        console.log(list);
+        
+        let {value}= event.target;
+        list = list.filter(function(item){
+            return item.country.toString().toLowerCase().search(value.toLowerCase()) !==-1;
+        });
 
-    //     this.setState({
-    //         globalData: list
-    //     })
+        this.setState({
+            globalData: list
+        })
 
-    // }
+    }
 
     render() {
         return (
