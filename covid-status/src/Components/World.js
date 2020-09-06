@@ -30,10 +30,14 @@ class World extends Component {
                 <Table striped bordered hover variant="dark">
                         <thead>
                             <tr>
-                                <td>Country</td>
-                                <td>Total Cases</td>
-                                <td>Recovered</td>
-                                <td>Death</td>
+                                <td>Search by Country :  <input type="text"/></td>
+                                {/* <td></td> */}
+                            </tr>
+                            <tr>
+                                <td><b>Country</b></td>
+                                <td><b>Total Cases</b></td>
+                                <td><b>Recovered</b></td>
+                                <td><b>Death</b></td>
                             </tr>
                         </thead>
                         <tbody>
