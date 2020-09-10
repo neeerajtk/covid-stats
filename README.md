@@ -1,7 +1,7 @@
 # covid-stats
 
 
-# Newspaper.io
+# Covid Stats
 
 Covid Stats is a API based React Application for knowing the global and local COVID status. 
 
@@ -35,4 +35,4 @@ Please make sure to update tests as appropriate.
 
 ## Deployment
 
-https://neeerajtk.github.io/covid-status/
+https://neeerajtk.github.io/covid-stats/
